@@ -1,0 +1,206 @@
+\usepackage{amsmath}
+\section{Постановка задачи}
+\textbf{Даны 5 распределений:}
+\begin{itemize}
+\item Нормальное распределение: \textit{N(x,0,1)}
+\item Распрделение Коши: \textit{C(x,0,1)}
+\item Распределение Стьюдента:\textit{ t}
+\item Распределение Пуассона: \textit{P(k,10)}
+\item Нормальное распрделение: \textit{U(x,-\sqrt{3}, \sqrt{3})}
+\end{itemize}
+\begin{enumerate}
+    \item Необходимо сгенерировать выборки размером 10,50 и 1000 элементов. Построить на одном рисунке гистограмму и график плостности распределения.
+    \item Сгенерировать выборки размером 10, 100 и 1000 элементов. Для каждой вычислить следующие характеристики положения данных: \bar{x}, \textit{med}x, z\textsubscript{R}, z\textsubscript{Q}, z\textsubscript{tr}. Повторить такие вычисления 1000 раз для каждой выборки и найти среднее характеристик положения и их квадратов:
+    \begin{gather*}
+ E(z) = \bar{z}
+\end{gather*} 
+    Вычислить оценку дисперсии по формуле:
+    \begin{gather*}
+    D(z) = \bar{z^{2}} - \bar{z}^{2}
+\end{gather*} 
+    Представить полученные данные в виде таблицы
+\end{enumerate}
+
+
+\section{Теоретическая информация}
+
+
+\subsection{Распределения}
+\begin{itemize}
+    \item  Нормальное распределение \begin{gather*}
+ N(x,0,1) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^{2}}{2}}
+\end{gather*} 
+    \item  Распределение Коши  
+    \begin{gather*}
+    C(x,0,1) = \frac{1}{\pi}\frac{1}{x^{2} + 1}
+\end{gather*} 
+    \item  Распределение Стьюдента 
+    \item  Распределение Пуассона
+    \begin{gather*}
+ P(k,10) = \frac{10^{k}}{k!}e^{-10}
+\end{gather*} 
+    \item  Нормальное распределение
+    \begin{gather*}
+U(x,-\sqrt{3}, \sqrt{3}) = \begin{cases}
+\frac{1}{2\sqrt{3}}, |x| \leq \sqrt{3}\\
+0,  |x| > \sqrt{3} \\ 
+\end{cases}
+\end{gather*}
+
+\end{itemize}
+
+
+\subsubsection{Определение}
+Гистогра́мма в математической статистике — это один из графических методов исследования рядов распределения значений случайной величины.
+\subsection{Характеристики положения}
+\begin{itemize}
+    \item Выборочное среднее    \begin{gather*}
+    \bar{x} = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i
+\end{gather*} 
+    \item Выборочная медиана
+     \begin{gather*}
+med x = \begin{cases}
+x\textsubscript{(\textit{l}+1)}, n = 2l + 1\\
+\frac{x\textsubscript{(\textit{l})} + x\textsubscript{(\textit{l}+1)}}{2},  n = 2l \\ 
+\end{cases}
+\end{gather*}
+    \item Полусумма экстремальных выборочных элементов \begin{gather*}
+        z\textsubscript{R} = \frac{x\textsubscript{(1)} + x\textsubscript{(\textit{n})}}{2}
+    \end{gather*}
+    \item Полусумма квартилей 
+    Выборочная квартиль z\textsubscript{p} порядка \textit{p} определяется формулой 
+    \begin{gather*}
+        z\textsubscript{p} = \begin{cases}
+x\textsubscript{([\textit{np}]+1)}, np дробное\\
+x\textsubscript{(\textit{np})},  np целое \\ 
+\end{cases}
+    \end{gather*}
+
+    полусумма квартилей \begin{gather*}
+        z\textsubscript{Q} = \frac{z\textsubscript{\frac{1}{4}} + z\textsubscript{\sfrac{3}{4}}}{2}
+    \end{gather*}
+    
+    \item Усеченное среднее \begin{gather*}
+            z\textsubscript{tr} = \frac{1}{n-2r}\displaystyle\sum_{i=r+1}^{n-r} x_(i), r \approx \frac{n}{4}
+    \end{gather*}
+
+\end{itemize}
+
+\subsubsection{Характеристики рассеяния}
+Выборочная дисперсия \begin{gather*}
+    D = \frac{1}{n}\displaystyle\sum_{i=1}^{n}(x_i - \bar{x})^{2}
+\end{gather*}
+
+\section{Репозиторий}
+
+\section{Результаты}
+\subsection{Гистограмма и график плотности распределения}
+\subsection{Характеристики положения и рассеяния}
+\begin{table}[H]
+    \centering
+   
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & -0.003426 & -0.009699 & 0.003866 & 0.310776 & 0.267591 \\ \hline
+         \textit{D(z)} & 0.101463       &       0.137621       &       0.182218       &        0.125949       &        0.117248 \\ \hline
+        \textit{E(z)} + \sqrt{D(z)} &[-0.321959, 0.315107] & [-0.380672, 0.361274] & [-0.423004, 0.430736] & [-0.044117, 0.665669] & [-0.074824, 0.610006] \\ \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для нормального распределения}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+   
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+        \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для распределения Коши}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+        \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для распределения Стьюдента}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+   
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+        \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для распределения Пуассона}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+        \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} & & & & & \\ \hline
+         \textit{D(z)} & & & & & \\ \hline
+         \textit{E(z)} + \sqrt{D(z)} & & & & & \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для равномерного распренделения }
+    \label{tab:my_label}
+\end{table}

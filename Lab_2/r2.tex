@@ -1,0 +1,201 @@
+\usepackage{amsmath}
+\section{Постановка задачи}
+\textbf{Даны 5 распределений:}
+\begin{itemize}
+\item Нормальное распределение: \textit{N(x,0,1)}
+\item Распрделение Коши: \textit{C(x,0,1)}
+\item Распределение Стьюдента:\textit{ t}
+\item Распределение Пуассона: \textit{P(k,10)}
+\item Нормальное распрделение: \textit{U(x,-\sqrt{3}, \sqrt{3})}
+\end{itemize}
+\begin{enumerate}
+    \item Необходимо сгенерировать выборки размером 10,50 и 1000 элементов. Построить на одном рисунке гистограмму и график плостности распределения.
+    \item Сгенерировать выборки размером 10, 100 и 1000 элементов. Для каждой вычислить следующие характеристики положения данных: \bar{x}, \textit{med}x, z\textsubscript{R}, z\textsubscript{Q}, z\textsubscript{tr}. Повторить такие вычисления 1000 раз для каждой выборки и найти среднее характеристик положения и их квадратов:
+    \begin{gather*}
+ E(z) = \bar{z}
+\end{gather*} 
+    Вычислить оценку дисперсии по формуле:
+    \begin{gather*}
+    D(z) = \bar{z^{2}} - \bar{z}^{2}
+\end{gather*} 
+    Представить полученные данные в виде таблицы
+\end{enumerate}
+
+
+\section{Теоретическая информация}
+
+
+\subsection{Распределения}
+\begin{itemize}
+    \item  Нормальное распределение \begin{gather*}
+ N(x,0,1) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^{2}}{2}}
+\end{gather*} 
+    \item  Распределение Коши  
+    \begin{gather*}
+    C(x,0,1) = \frac{1}{\pi}\frac{1}{x^{2} + 1}
+\end{gather*} 
+    \item  Распределение Стьюдента 
+    \item  Распределение Пуассона
+    \begin{gather*}
+ P(k,10) = \frac{10^{k}}{k!}e^{-10}
+\end{gather*} 
+    \item  Нормальное распределение
+    \begin{gather*}
+U(x,-\sqrt{3}, \sqrt{3}) = \begin{cases}
+\frac{1}{2\sqrt{3}}, |x| \leq \sqrt{3}\\
+0,  |x| > \sqrt{3} \\ 
+\end{cases}
+\end{gather*}
+
+\end{itemize}
+
+
+\subsubsection{Определение}
+Гистогра́мма в математической статистике — это один из графических методов исследования рядов распределения значений случайной величины.
+\subsection{Характеристики положения}
+\begin{itemize}
+    \item Выборочное среднее    \begin{gather*}
+    \bar{x} = \frac{1}{n}\displaystyle\sum_{i=1}^{n} x_i
+\end{gather*} 
+    \item Выборочная медиана
+     \begin{gather*}
+med x = \begin{cases}
+x\textsubscript{(\textit{l}+1)}, n = 2l + 1\\
+\frac{x\textsubscript{(\textit{l})} + x\textsubscript{(\textit{l}+1)}}{2},  n = 2l \\ 
+\end{cases}
+\end{gather*}
+    \item Полусумма экстремальных выборочных элементов \begin{gather*}
+        z\textsubscript{R} = \frac{x\textsubscript{(1)} + x\textsubscript{(\textit{n})}}{2}
+    \end{gather*}
+    \item Полусумма квартилей 
+    Выборочная квартиль z\textsubscript{p} порядка \textit{p} определяется формулой 
+    \begin{gather*}
+        z\textsubscript{p} = \begin{cases}
+x\textsubscript{([\textit{np}]+1)}, np дробное\\
+x\textsubscript{(\textit{np})},  np целое \\ 
+\end{cases}
+    \end{gather*}
+
+    полусумма квартилей \begin{gather*}
+        z\textsubscript{Q} = \frac{z\textsubscript{\frac{1}{4}} + z\textsubscript{\sfrac{3}{4}}}{2}
+    \end{gather*}
+    
+    \item Усеченное среднее \begin{gather*}
+            z\textsubscript{tr} = \frac{1}{n-2r}\displaystyle\sum_{i=r+1}^{n-r} x_(i), r \approx \frac{n}{4}
+    \end{gather*}
+
+\end{itemize}
+
+\subsubsection{Характеристики рассеяния}
+Выборочная дисперсия \begin{gather*}
+    D = \frac{1}{n}\displaystyle\sum_{i=1}^{n}(x_i - \bar{x})^{2}
+\end{gather*}
+
+\section{Репозиторий}
+\newpage
+\section{Результаты}
+\subsection{Гистограмма и график плотности распределения}
+\subsection{Характеристики положения и рассеяния}
+\begin{table}[H]
+\centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & -0.003 & -0.009 & 0.004 & 0.311 & 0.268 \\ \hline
+         \textit{D(z)} & 0.101       &       0.138       &       0.182     &        0.126      &        0.117 \\ \hline
+       \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & 0.003       &        0.006      &       -0.010       &        0.015       &        0.029  \\ \hline
+         \textit{D(z)} &  0.010       &        0.017       &        0.092      &        0.012       &        0.012  \\ \hline
+        \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} &  0.000505       &       0.000861       &       -0.005829       &        0.001809       &       0.003526  \\ \hline
+         \textit{D(z)} & 0.001001       &       0.001546       &        0.061285       &        0.001240        &       0.001208 \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для нормального распределения}
+    \label{tab:my_label}
+\end{table}
+
+\begin{table}[H]
+    \centering
+   
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} &  0.263      &        0.015      &         1.235         &        1.152       &       0.708 \\ \hline
+         \textit{D(z)} & 326.419       &      0.309       &      7957.822    &     7.738      &       1.571\\ \hline
+       \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & -0.625        &       0.005      &         -31.900        &       0.034       &        0.044 \\ \hline
+         \textit{D(z)} &   315.737     &       0.026     &       769006.729      &       0.053     &        0.028  \\ \hline
+        \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} &  -0.975851       &     -0.001068     &        -471.841774        &      0.001362      &      0.003156          \\ \hline
+         \textit{D(z)} & 577.154552      &     0.002354       &      142342868.075401       &     0.004851      &       0.002458     \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для распределения Коши}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+        &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} & -0.003 & -0.009 & 0.004 & 0.311 & 0.268 \\ \hline
+         \textit{D(z)} & 0.101       &       0.138       &       0.182     &        0.126      &        0.117 \\ \hline
+       \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & 0.003       &        0.006      &       -0.010       &        0.015       &        0.029  \\ \hline
+         \textit{D(z)} &  0.010       &        0.017       &        0.092      &        0.012       &        0.012  \\ \hline
+        \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} &  0.000505       &       0.000861       &       -0.005829       &        0.001809       &       0.003526  \\ \hline
+         \textit{D(z)} & 0.001001       &       0.001546       &        0.061285       &        0.001240        &       0.001208 \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для распределения Стьюдента}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+   
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} &  10.020       &       9.886      &       10.325      &       10.951      &      10.793 \\ \hline
+         \textit{D(z)} & 1.059     &      1.538      &    1.915     &       1.411      &      1.316 \\ \hline
+       \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & 9.993    &      9.840     &      10.911    &          9.970     &     9.942  \\ \hline
+         \textit{D(z)} &  0.098   &     0.216    &      0.869    &      0.163      &       0.125 \\ \hline
+        \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} &  10.006251      &      9.998113       &     11.666532     &         9.994541      &       9.869122   \\ \hline
+         \textit{D(z)} &  0.010175     &   0.001996    &     0.630028  &      0.004223      &   0.011241  \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для распределения Пуассона}
+    \label{tab:my_label}
+\end{table}
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|l|l|}
+    \hline
+         &  x &   \textit{med}x   &   z\textsubscript{R}  &   z\textsubscript{Q}  &   z\textsubscript{tr}\\ \hline \hline
+         n = 10& & & & & \\ \hline
+         \textit{E(z)} &  0.016    &        0.023     &     -0.001   &       0.330  &       0.331 \\ \hline
+         \textit{D(z)} &0.102      &       0.239     &     0.044    &      0.131 &       0.158   \\ \hline
+       \hline
+         n = 100& & & & & \\ \hline
+         \textit{E(z)} & 0.004      &      0.010    &      -0.001    &      0.023    &       0.040  \\ \hline
+         \textit{D(z)} & 0.010      &     0.029     &      0.001     &       0.014      &      0.019  \\ \hline
+        \hline
+         n = 1000& & & & & \\ \hline
+         \textit{E(z)} &   0.002147 & 0.004821       &        3e-06        &       0.004058       &        0.006161 \\ \hline
+         \textit{D(z)} &  0.001008       &      0.002881     &       5e-06         &       0.001483       &     0.001964  \\ \hline
+    \end{tabular}
+     \caption{Таблица характеристик для равномерного распренделения }
+    \label{tab:my_label}
+\end{table}

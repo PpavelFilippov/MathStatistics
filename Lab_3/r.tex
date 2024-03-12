@@ -1,0 +1,93 @@
+\section{Постановка задачи}
+\textbf{Даны 5 распределений:}
+\begin{itemize}
+\item Нормальное распределение: \begin{gather*}N(x,0,1)\end{gather*}
+\item Распрделение Коши: \begin{gather*}C(x,0,1)\end{gather*}
+\item Распределение Стьюдента:\begin{gather*}t(x,0,3)\end{gather*}
+\item Распределение Пуассона: \begin{gather*}P(k,10)\end{gather*}
+\item Нормальное распрделение: \begin{gather*}U(x,-\sqrt{3}, \sqrt{3})\end{gather*}
+\end{itemize}
+\begin{enumerate}
+    \item Сгенерировать выборки размером 20 и 100 элементов.
+Построить для них боксплот Тьюки. Для каждого распределения определить долю выбросов экспериментально (сгенерировав выборку, соответствующую распределению 1000 раз, и вычислив среднюю долю выбросов) и сравнить с результатами, полученными теоретически.
+\end{enumerate}
+
+
+\section{Теоретическая информация}
+
+
+\subsection{Распределения}
+\begin{itemize}
+    \item  Нормальное распределение \begin{gather*}
+ N(x,0,1) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^{2}}{2}}
+\end{gather*} 
+    \item  Распределение Коши  
+    \begin{gather*}
+    C(x,0,1) = \frac{1}{\pi}\frac{1}{x^{2} + 1}
+\end{gather*} 
+    \item  Распределение Стьюдента   \begin{gather*}
+ t(x,0,3) = \frac{Y_0}{\sqrt{\displaystyle\sum_{i=0}^{3} Y_i^{2}}}, Y_i \sim N(0,1)
+\end{gather*} 
+    \item  Распределение Пуассона
+    \begin{gather*}
+ P(k,10) = \frac{10^{k}}{k!}e^{-10}
+\end{gather*} 
+    \item  Нормальное распределение
+    \begin{gather*}
+U(x,-\sqrt{3}, \sqrt{3}) = \begin{cases}
+\frac{1}{2\sqrt{3}}, |x| \leq \sqrt{3}\\
+0,  |x| > \sqrt{3} \\ 
+\end{cases}
+\end{gather*}
+
+\end{itemize}
+
+
+\subsection{Боксплот Тьюки}
+\subsubsection{Определение}
+Боксплот (англ. box plot) — график, использующийся в описательной статистике, компактно изображающий одномерное распределение вероятностей.
+\subsubsection{Описание}
+Такой вид диаграммы в удобной форме показывает медиану, нижний и верхний квартили и выбросы.
+Несколько таких ящиков можно нарисовать бок о бок, чтобы визуально сравнивать одно распределение с другим; их можно располагать как горизонтально, так и вертикально. Расстояния между различными частями ящика позволяют определить степень разброса (дисперсии) и асимметрии данных и выявить выбросы
+\subsubsection{Построение} Границами ящика служат первый и третий квартили, линия в середине ящика — медиана. Концы усов —
+края статистически значимой выборки (без выбросов). Длину «усов» определяют разность первого квартиля и полутора межквартильных расстояний и сумма третьего квартиля и полутора межквартильных расстояний. Формула имеет вид \begin{gather*}
+    X_1 = Q_1 - \frac{}{}(Q_3 - Q_1) ,  X_2 = Q_3 - \frac{}{}(Q_3 - Q_1) \\
+\end{gather*},где \textit{X\textsubscript{1}} - нижняя граница уса, \textit{X\textsubscript{2}} - верхняя граница уса, \textit{Q\textsubscript{1}} - первый квартиль, \textit{Q\textsubscript{3}} - третий квартиль. Данные, выходящие за границы усов (выбросы), отображаются на графике в виде маленьких кружков
+
+\section{Изображения}
+
+
+    \begin{figure}
+        \centering
+        \includegraphics{fig/T_N.png}
+        \caption{Нормальное распределение}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics{fig/C_N.png}
+        \caption{Распределение Коши}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics{fig/T_t.png}
+        \caption{Распределение Стьюдента}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics{fig/T_P.png}
+        \caption{Распределение Пуассона}
+        \label{fig:enter-label}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \includegraphics{fig/T_U.png}
+        \caption{Равномерное распределение}
+        \label{fig:enter-label}
+    \end{figure}
