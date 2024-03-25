@@ -145,7 +145,7 @@ if __name__ == "__main__":
     sizes = [[10, 50, 1000], [10, 100, 1000], [20, 100], [20, 60, 100]]
 
     # LABS
-  
+
     calc_characteristics(names, sizes[1])  # lab 2
     
   
