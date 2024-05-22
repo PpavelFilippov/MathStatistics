@@ -23,12 +23,16 @@ def chi_square_test(alpha, k, distribution, size, name):
   print('H0 accepted', result)
 
   for i in range(k):
-    print('Limits', bins[i], bins[i+1])
-    print('n_i', frequency[i])
-    print('p_i', p[i])
-    print('np_i', n * p[i])
-    print('n_i - np_i', frequency[i] - n * p[i])
-    print('(n_i - np_i)^2 / np_i', (frequency[i] - n * p[i]) ** 2 / (n * p[i]))
+   print(
+    '\\(',
+    '(', f'{bins[i]:.4f}', f'{bins[i+1]:.4f}', ')',
+    '\\)',
+    '&', f'{frequency[i]:}',
+    '&', f'{p[i]:.4f}',
+    '&', f'{n * p[i]:.4f}',
+    '&', f'{frequency[i] - n * p[i]:.4f}',
+    '&', f'{(frequency[i] - n * p[i]) ** 2 / (n * p[i]):.4f}',
+    '\\ \\hline')
 
 alpha = 0.05
 k = 10
